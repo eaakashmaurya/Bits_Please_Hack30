@@ -22,5 +22,5 @@ urlpatterns = [
     path('users/', include(('users.urls', 'users'), namespace='users')),
     path('complaints/', include(('complaints.urls', 'complaints'), namespace='complaints')),
     path('', views.HomePage.as_view(), name='home'),
-
+    path('heatmap/', include('geoheat.urls', namespace='geoheat')),
 ]

@@ -1,0 +1,1 @@
+{% extends 'geodex.html' %} {% load crispy_forms_tags %} {% block title %} calculate distance {% endblock title %} {% block content %} {{ map|safe }} {% if request.POST and distance is not None %} {% endif %} {% endblock content %}

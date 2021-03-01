@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Covid-19 Hygiene Surveillance</title>
@@ -20,28 +20,28 @@
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
 
 </head>
+
 <body>
-<nav class="navbar mynav" role="navigation" id="navbar">
-    <div class="container">
-        <a class="navbar-brand mynav" href="{% url 'home' %}">Social Media</a>
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
+    <nav class="navbar mynav" role="navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Social Media</a>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'complaints:create' %}">Log a complaint</a></li>
                 <li><a href="">GPS Heatmap</a></li>
                 <li><a href="{% url 'users:logout' %}">Logout</a></li>
-            {% else %}
+                {% else %}
                 <li><a href="{% url 'users:login' %}">Login</a></li>
                 <li><a href="{% url 'users:signup' %}">Signup</a></li>
-            {% endif %}
-        </ul>
-    </div>
-</nav>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
 
-<div class="container mycontent">
-    {% block content %}
-    {% endblock %}
-</div>
-<canvas id="canvas"></canvas>
+    <div class="container mycontent">
+        {% block content %} {% endblock %}
+    </div>
+    <canvas id="canvas"></canvas>
 </body>
 
 <script type="text/javascript" src="{% static 'js/master.js' %}"></script>
