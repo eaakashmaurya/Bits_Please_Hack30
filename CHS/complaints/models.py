@@ -14,7 +14,8 @@ class Complaint(models.Model):
         ('0.5', 'No mask + Symptomatic'),
         ('0.9', 'No mask + Symptomatic + Unhygienic')
     )
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='complaints')
+    profile = models.ForeignKey(Profile, related_name="complaints", null=True, on_delete=models.SET_NULL )
+
     created_at = models.DateTimeField(auto_now=True)
     complaint_face_picture = models.ImageField(
         upload_to='complaints/pictures',
@@ -22,7 +23,6 @@ class Complaint(models.Model):
         null=True
     )
     category = models.CharField(max_length = 30, choices=DEFAULT_CATEGORY)
-    message = models.TextField() #remarks
 
     def __str__(self):
         return self.message

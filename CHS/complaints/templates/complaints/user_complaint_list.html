@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-md-4">
+	<h1>@{{ complaint_user.username }}</h1>
+	<p>Complaint History</p>
+</div>
+
+<div class="col-md-8">
+	{% for complaint in complaint_list %}
+		{% include "complaints/_complaint.html" %}
+	{% endfor %}
+</div>
+{% endblock %}
