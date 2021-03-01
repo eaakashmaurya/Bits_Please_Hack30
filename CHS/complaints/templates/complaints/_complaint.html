@@ -1,0 +1,13 @@
+<div class="post media">
+	<h3>{{ complaint.category }}</h3>
+	<div class="media-body">
+		<strong>{{ complaint.user.username }}</strong>
+		<h5 class="media-heading">
+			<span class="username"><a href="{% url 'complaints:for_user' username=complaint.user.username %}">@{{ complaint.user.username }}</a></span>
+			<time class="time">
+                <a href="{% url 'complaints:single' username=complaint.user.username pk=post.pk %}">{{ post.created_at }}</a>
+            </time>
+		</h5>
+
+	</div>
+</div>

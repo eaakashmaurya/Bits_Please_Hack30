@@ -1,0 +1,12 @@
+{%  extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<h4>Create New Complaint</h4>
+<form id="post_form" action="{% url 'complaints:create' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="Post" class="btn btn-primary btn-large">
+</form>
+{% endblock %}

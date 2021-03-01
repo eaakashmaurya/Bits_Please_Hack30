@@ -61,14 +61,14 @@ class CreateComplaint(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class DeleteComplaint(LoginRequiredMixin, generic.DeleteView):
-    model = models.Complaint
-    success_url = reverse_lazy("complaint:for_user")
+# class DeleteComplaint(LoginRequiredMixin, generic.DeleteView):
+#     model = models.Complaint
+#     success_url = reverse_lazy("complaint:for_user")
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(user_id=self.request.user.id)
+#     def get_queryset(self):
+#         queryset = super().get_queryset()
+#         return queryset.filter(user_id=self.request.user.id)
 
-    def delete(self, *args, **kwargs):
-        messages.success(self.request, "Complaint Deleted")
-        return super().delete(*args, **kwargs)
+#     def delete(self, *args, **kwargs):
+#         messages.success(self.request, "Complaint Deleted")
+#         return super().delete(*args, **kwargs)
