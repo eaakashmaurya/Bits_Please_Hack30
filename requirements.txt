@@ -5,3 +5,4 @@ gmaps
 folium
 django-crispy-forms
 Pillow
+face_recognition
