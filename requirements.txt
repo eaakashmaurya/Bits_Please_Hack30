@@ -1,0 +1,7 @@
+Django
+geoip2
+geopy
+gmaps
+folium
+django-crispy-forms
+Pillow
