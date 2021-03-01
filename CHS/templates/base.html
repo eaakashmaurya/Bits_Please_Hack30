@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'complaints:create' %}">Log a complaint</a></li>
-                <li><a href="">GPS Heatmap</a></li>
+                <li><a href="{% url 'myapp:geoheat'}">GPS Heatmap</a></li>
                 <li><a href="{% url 'users:logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'users:login' %}">Login</a></li>

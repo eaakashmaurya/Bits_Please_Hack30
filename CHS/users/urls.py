@@ -4,6 +4,9 @@ from django.contrib.auth.decorators import login_required
 # Views
 from users import views
 
+#template tagging
+app_name = 'users'
+
 urlpatterns = [
 
     # Management

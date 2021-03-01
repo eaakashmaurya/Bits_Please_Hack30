@@ -14,10 +14,10 @@ class Profile(models.Model):
 
     aadhar_uid = models.CharField(max_length=16, blank=False, null =False)
     biography = models.TextField(blank=True)
-    ip = models.TextField(blank=False)
+    ip = models.TextField(blank=True)
     latitude = models.TextField(blank=True)
     longitude = models.TextField(blank=True)
-    danger_weight = models.FloatField(blank=True)
+    danger_weight = models.FloatField(blank=True, default=1)
     face_picture = models.ImageField(
         upload_to='users/pictures',
         blank=True,

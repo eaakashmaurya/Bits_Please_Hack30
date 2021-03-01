@@ -22,3 +22,4 @@ def get_zoom(distance):
         return 4
     else:
         return 2
+
